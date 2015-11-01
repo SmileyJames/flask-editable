@@ -1,0 +1,145 @@
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 20px;
+}
+/*all: initial;*/
+
+[data-flask-editable-image],
+[data-flask-editable-bg-image],
+[data-flask-editable-text] {
+    outline: dashed 1px rgba(0, 0, 0, 0.5)
+}
+
+[data-flask-editable-image],
+[data-flask-editable-bg-image] {
+    cursor: pointer;
+}
+
+[data-flask-editable-image]:focus,
+[data-flask-editable-bg-image]:focus,
+[data-flask-editable-text]:focus {
+    outline: dashed 1px rgba(0, 0, 0, 0.8);
+}
+
+.flask-edit-close-button {
+    display: inline-block;
+    border-radius: 3px;
+    padding: 0.3em 0.5em;
+    margin: 0.5em;
+    color: black;
+    background-color: white;
+    border: solid 0px;
+    outline: none;
+    cursor: pointer;
+}
+
+.flask-edit-close-button:hover,
+.flask-edit-close-button:focus {
+    background-color: rgb(100, 150, 255);
+}
+
+body.flask-edit-stop-scroll {
+    overflow: hidden;
+}
+
+
+.flask-edit-publish-button {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: inline-block;
+    border-radius: 3px;
+    padding: 0.3em 0.5em;
+    margin: 0.5em;
+    color: white;
+    background-color: rgb(30, 80, 255);
+    border: solid 0px;
+    outline: none;
+    cursor: pointer;
+}
+
+.flask-edit-input-text {
+    display: block;
+    border-radius: 3px;
+    width: 100%;
+    padding: 0.3em 0.5em;
+    color: black;
+    background-color: white;
+    border: solid 0px white;
+    margin: 5px 0 10px 0;
+    outline: none;
+}
+
+.flask-edit-publish-button svg {
+    height: 1em;
+    width: 1em;
+    vertical-align: middle;
+}
+
+.flask-edit-fixed {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(50, 50, 60, 0.8);
+}
+
+.flask-edit-form {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(200, 200, 200);
+    max-width: 400px;
+    min-height: 200px;
+    width: 90%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+label.flask-edit-label {
+    display: block;
+    text-align: left;
+    padding: 5px 2px;
+}
+
+label.flask-edit-file-upload {
+    display: inline-block;
+    border-radius: 3px;
+    padding: 0.3em 0.5em;
+    color: white;
+    background-color: rgb(30, 80, 255);
+    border: solid 0px;
+    outline: none;
+    cursor: pointer;
+    margin: 30px;
+}
+
+label.flask-edit-file-upload > svg {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+label.flask-edit-file-upload > input[type="file"] {
+    display: none;
+}
+
+@keyframes flask-edit-highlight {
+    0% {
+        background: green;
+    }
+    100% {
+        background: none;
+    }
+}
+
+.flask-edit-flash {
+    background: none;
+    animation: flask-edit-highlight 1s;
+}

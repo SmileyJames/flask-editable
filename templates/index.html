@@ -1,0 +1,35 @@
+<html>
+    <head>
+        {% editablehead %}
+    </head>
+    <body>
+        <input/>
+        {% editabletext "you think this is a game " %}
+            <p>Hello World</p>
+        {% endeditabletext %}
+
+        {% editabletext "you think this is a game " %}
+            <p>Hello World</p>
+        {% endeditabletext %}
+
+        {% editableimage "hello world" %}
+            <img src="jack.png" alt="this is jack"/>
+        {% endeditableimage %}
+
+        {% editableimage "hello world" %}
+            <img class="poop"/>
+        {% endeditableimage %}
+
+        {% editablebgimage "this" %}
+            <div class="hello" style="color: red">
+                Hello World
+            </div>
+        {% endeditablebgimage %}
+
+        {% editablebgimage "this" %}
+            <div class="hello" style="color: red">
+                Hello World
+            </div>
+        {% endeditablebgimage %}
+    </body>
+</html>

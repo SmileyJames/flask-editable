@@ -22,7 +22,7 @@ $(function(){
     "            <button class='flask-edit-close-button'>Done</button>                                                  "._()+
     "        </div>                                                                                                     "._()+
     "    </div>                                                                                                         "._()+
-    "    <input class='flask-edit-file-input' type='file'></input>                                                         "._()+
+    "    <input class='flask-edit-file-input' type='file'></input>                                                      "._()+
     "    <button class='flask-edit-publish-button'>Publish</button>                                                     "._()+
     "</div>                                                                                                             "._());
     $("body").append(flaskEditDOM);

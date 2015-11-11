@@ -43,8 +43,9 @@
     box-shadow: none !important;
 }
 
-.flask-edit-close-button:hover,
-.flask-edit-close-button:focus {
+.cleanslate .flask-edit-close-button:hover,
+.cleanslate .flask-edit-close-button:focus,
+.cleanslate .flask-edit-close-button:active {
     background: rgb(100, 150, 255) !important;
 }
 
@@ -52,7 +53,8 @@ body.flask-edit-stop-scroll {
     overflow: hidden;
 }
 
-.cleanslate .flask-edit-publish-button {
+.cleanslate .flask-edit-publish-button,
+.cleanslate .flask-edit-publish-button:active {
     position: fixed !important;
     bottom: 0 !important;
     right: 0 !important;

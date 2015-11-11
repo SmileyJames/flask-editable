@@ -2,7 +2,33 @@ $(function(){
     //JSON object
     var formData = {"text": {}, "images": {}, "bgimages": {}};
 
+    // I am so sorry I wanted it to look readable and care little for speed.
+    String.prototype._ = String.prototype.trim;
+    var flaskEditDOM = $(""+
+    "<div class='cleanslate'>                                                                                           "._()+
+    "    <div class='flask-edit-fixed'>                                                                                 "._()+
+    "        <div class='flask-edit-form'>                                                                              "._()+
+    "            <label class='flask-edit-file-upload' for='file-upload'>                                               "._()+
+    "                 Choose image file                                                                                 "._()+
+    "                 <br />                                                                                            "._()+
+    "                 <svg fill='#FFFFFF' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'>"._()+
+    "                     <path d='M0 0h24v24H0z' fill='none'/>                                                         "._()+
+    "                     <path d='M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z'/>                                             "._()+
+    "                 </svg>                                                                                            "._()+
+    "                 <input id='file-upload' type='file' name='image' accept='image/*'/>                               "._()+
+    "            </label>                                                                                               "._()+
+    "            <label class='flask-edit-label' for='description'>Description of image:</label>                        "._()+
+    "            <input class='flask-edit-input-text' type='text' id='description' name='description'/>                 "._()+
+    "            <button class='flask-edit-close-button'>Done</button>                                                  "._()+
+    "        </div>                                                                                                     "._()+
+    "    </div>                                                                                                         "._()+
+    "    <input class='flask-edit-file-input' type='file'></input>                                                         "._()+
+    "    <button class='flask-edit-publish-button'>Publish</button>                                                     "._()+
+    "</div>                                                                                                             "._());
+    $("body").append(flaskEditDOM);
+
     $("[data-flask-editable-image], [data-flask-editable-bg-image]").keypress(function(e){
+        //Return enter
         if (e.which == 13) {
             $(this).click();
         }
@@ -25,30 +51,16 @@ $(function(){
     });
 
     // Setup the form for editable images
-    var imageForm = $(
-    '<div class="flask-edit-fixed">' +
-    '    <div class="flask-edit-form">' +
-    '        <label class="flask-edit-file-upload" for="file-upload">' +
-    '             Choose image file' +
-    '             <br />' +
-    '             <svg fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>' +
-    '             <input id="file-upload" type="file" name="image" accept="image/*"/>' +
-    '        </label>' +
-    '        <label class="flask-edit-label" for="description">Description of image:</label>' +
-    '        <input class="flask-edit-input-text" type="text" id="description" name="description"/>' +
-    '        <button class="flask-edit-close-button">Done</button>' +
-    '    </div>' +
-    '</div>');
-    $("body").append(imageForm);
-    imageForm.hide();
+    var imageForm = flaskEditDOM.find(".flask-edit-fixed");
+    imageForm.attr("style", "display: none !important;");
     imageForm.click(function(){
-        imageForm.hide();
+        imageForm.attr("style", "display: none !important;");
         $("body").removeClass("flask-edit-stop-scroll");
     }).children().click(function(e){
         e.stopPropagation();
     });
     imageForm.find(".flask-edit-close-button").click(function(){
-        imageForm.hide();
+        imageForm.attr("style", "display: none !important;");
         $("body").removeClass("flask-edit-stop-scroll");
     });
 
@@ -64,7 +76,8 @@ $(function(){
         var name = element.attr("data-flask-editable-image");
         imageForm.find("#description").val(element.attr("alt"));
         formData["images"][name] = formData["images"][name] || {"file": "", "description": ""};
-        imageForm.show();
+        imageForm.attr("style", "");
+        imageForm.removeClass("flask-edit-hidden");
         $("body").addClass("flask-edit-stop-scroll");
 
         imageForm.find('input[type="file"]').change(function(){
@@ -89,9 +102,8 @@ $(function(){
     });
 
     // Input to be used for uploading bg images
-    var fileInput = $('<input type="file"></input>')
-    $("body").append(fileInput);
-    fileInput.hide();
+    var fileInput = flaskEditDOM.find(".flask-edit-file-input");
+    fileInput.attr("style", "display: none !important;");
 
     /*
      *
@@ -118,8 +130,7 @@ $(function(){
         });
     });
 
-    var publishButton = $("<button class='flask-edit-publish-button'>Publish</button>");
-    $("body").append(publishButton);
+    var publishButton = flaskEditDOM.find(".flask-edit-publish-button");
     publishButton.click(function() {
         publishButton.text("Publishing...");
         $.ajax({

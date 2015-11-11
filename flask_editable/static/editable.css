@@ -15,21 +15,37 @@
     outline: dashed 1px rgba(0, 0, 0, 0.8);
 }
 
-.flask-edit-close-button {
-    display: inline-block;
-    border-radius: 3px;
-    padding: 0.3em 0.5em;
-    margin: 0.5em;
-    color: black;
-    background-color: white;
-    border: solid 0px;
-    outline: none;
-    cursor: pointer;
+.cleanslate {
+    font-family: Verdana,Geneva,sans-serif !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    font-weight: 500 !important;
+    line-height: 26.4px !important;
+}
+
+.cleanslate .flask-edit-close-button {
+    display: inline-block !important;
+    border-radius: 3px !important;
+    padding: 0.3em 0.5em !important;
+    margin: 0.5em !important;
+    color: black !important;
+    background: white !important;
+    border: solid 0px !important;
+    outline: none !important;
+    cursor: pointer !important;
+    font-family: Verdana,Geneva,sans-serif !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    font-weight: 500 !important;
+    line-height: 26.4px !important;
+    box-shadow: none !important;
 }
 
 .flask-edit-close-button:hover,
 .flask-edit-close-button:focus {
-    background-color: rgb(100, 150, 255);
+    background: rgb(100, 150, 255) !important;
 }
 
 body.flask-edit-stop-scroll {
@@ -37,89 +53,104 @@ body.flask-edit-stop-scroll {
 }
 
 
-.flask-edit-publish-button {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    display: inline-block;
-    border-radius: 3px;
-    padding: 0.3em 0.5em;
-    margin: 0.5em;
-    color: white;
-    background-color: rgb(30, 80, 255);
-    border: solid 0px;
-    outline: none;
-    cursor: pointer;
+.cleanslate .flask-edit-publish-button {
+    position: fixed !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    display: inline-block !important;
+    border-radius: 3px !important;
+    padding: 0.3em 0.5em !important;
+    margin: 0.5em !important;
+    color: white !important;
+    background: rgb(30, 80, 255) !important;
+    border: solid 0px !important;
+    outline: none !important;
+    cursor: pointer !important;
+    font-family: Verdana,Geneva,sans-serif !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    font-weight: 500 !important;
+    line-height: 26.4px !important;
+    box-shadow: none !important;
 }
 
-.flask-edit-input-text {
-    display: block;
-    border-radius: 3px;
-    width: 100%;
-    padding: 0.3em 0.5em;
-    color: black;
-    background-color: white;
-    border: solid 0px white;
-    margin: 5px 0 10px 0;
-    outline: none;
+.cleanslate input[type="text"].flask-edit-input-text {
+    display: block !important;
+    border-radius: 3px !important;
+    width: 100% !important;
+    padding: 0.3em 0.5em !important;
+    color: black !important;
+    background-color: white !important;
+    border: solid 0px white !important;
+    margin: 5px 0 10px 0 !important;
+    outline: none !important;
+    font-family: Verdana, Geneva, sans-serif !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    font-weight: 500 !important;
+    line-height: 26.4px !important;
+    box-sizing: border-box !important;
 }
 
-.flask-edit-publish-button svg {
-    height: 1em;
-    width: 1em;
-    vertical-align: middle;
+.cleanslate .flask-edit-publish-button svg {
+    height: 1em !important;
+    width: 1em !important;
+    vertical-align: middle !important;
 }
 
-.flask-edit-fixed {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(50, 50, 60, 0.8);
+.cleanslate .flask-edit-fixed {
+    width: 100% !important;
+    height: 100% !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background-color: rgba(50, 50, 60, 0.8) !important;
 }
 
-.flask-edit-form {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgb(200, 200, 200);
-    max-width: 400px;
-    min-height: 200px;
-    width: 90%;
-    padding: 20px;
-    text-align: center;
-    border-radius: 3px;
+.cleanslate .flask-edit-form {
+    position: absolute !important;
+    top: 20% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    background-color: rgb(200, 200, 200) !important;
+    max-width: 400px !important;
+    min-height: 200px !important;
+    width: 90% !important;
+    padding: 20px !important;
+    text-align: center !important;
+    border-radius: 3px !important;
+    box-sizing: border-box !important;
 }
 
-label.flask-edit-label {
-    display: block;
-    text-align: left;
-    padding: 5px 2px;
+.cleanslate label.flask-edit-label {
+    display: block !important;
+    text-align: left !important;
+    padding: 5px 2px !important;
 }
 
-label.flask-edit-file-upload {
-    display: inline-block;
-    border-radius: 3px;
-    padding: 0.3em 0.5em;
-    color: white;
-    background-color: rgb(30, 80, 255);
-    border: solid 0px;
-    outline: none;
-    cursor: pointer;
-    margin: 30px;
+.cleanslate label.flask-edit-file-upload {
+    display: inline-block !important;
+    border-radius: 3px !important;
+    padding: 0.3em 0.5em !important;
+    color: white !important;
+    background-color: rgb(30, 80, 255) !important;
+    border: solid 0px !important;
+    outline: none !important;
+    cursor: pointer !important;
+    margin: 30px !important;
 }
 
-label.flask-edit-file-upload > svg {
-    width: 1.5em;
-    height: 1.5em;
+.cleanslate label.flask-edit-file-upload > svg {
+    width: 1.5em !important;
+    height: 1.5em !important;
 }
 
-label.flask-edit-file-upload > input[type="file"] {
-    display: none;
+.cleanslate label.flask-edit-file-upload > input[type="file"] {
+    display: none !important;
 }
 
 @keyframes flask-edit-highlight {
